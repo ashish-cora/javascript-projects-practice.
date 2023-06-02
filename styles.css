@@ -1,0 +1,20 @@
+#containerDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: #b8b8b8;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo p {
+  font-size: larger;
+  border: 0;
+  margin: 0;
+}
+#add textarea {
+  margin-top: 20px;
+  resize: none;
+}
