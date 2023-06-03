@@ -19,7 +19,13 @@
           <p>My Todo-s</p>
         </div>
         <div id="add">
-          <textarea placeholder="add new..."> </textarea>
+          <input
+            class="ashish"
+            type="text"
+            placeholder="add new.."
+            onkeyup="onInputChange(event)"
+          />
+          <button onclick="onAddClick(event)" disabled>Add</button>
         </div>
       </div>
       <div id="div2" class="inner">

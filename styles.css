@@ -1,7 +1,13 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 #containerDiv {
   display: flex;
   flex-direction: column;
   background-color: #b8b8b8;
+  padding: 20px 20px;
 }
 
 .logo {
@@ -14,7 +20,18 @@
   border: 0;
   margin: 0;
 }
-#add textarea {
+
+#add {
+  display: flex;
+  justify-content: space-around;
   margin-top: 20px;
-  resize: none;
+}
+.ashish {
+  width: 100%;
+  color: gray;
+  margin-right: 5px;
+}
+#add button {
+  width: 40px;
+  margin-left: 5px;
 }
