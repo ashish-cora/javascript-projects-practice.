@@ -2,16 +2,45 @@ function onAddClick(e) {
   let selector = document.querySelector("#add .ashish");
   if (selector.value == "" || selector.value == null) return;
   let listCreate = document.createElement("input");
+  let listCreateCheckbox = document.createElement("input");
+  let wrapperForCheckbox = document.createElement("div");
+
+  let trashBin = document.createElement("i");
+  listCreateCheckbox.id = "checkboxId";
+  let checkbox = document.getElementById("checkboxId");
   listCreate.type = "text";
-  listCreate.classList.add(["ashish"]);
+  listCreateCheckbox.type = "checkbox";
+  trashBin.classList.add("fa");
+  trashBin.classList.add("fa-trash");
+
+  listCreateCheckbox.style.height = listCreate.classList.add(["ashish"]);
   listCreate.value = selector.value;
   selector.value = "";
 
   let div2 = document.getElementById("div2");
-  div2.appendChild(listCreate);
+  div2.appendChild(wrapperForCheckbox);
+  wrapperForCheckbox.appendChild(listCreateCheckbox);
+  wrapperForCheckbox.appendChild(listCreate);
+  wrapperForCheckbox.appendChild(trashBin);
 
   e.target.disabled = true;
-  //   console.log(e);
+  wrapperForCheckbox.style.display = "flex";
+
+  //assigning an unique id for wrapperForCheckbox
+  // function assignUniqueId() {
+  let storeBoxForId = Math.random() * 10;
+  wrapperForCheckbox.id = storeBoxForId;
+  console.log(wrapperForCheckbox.id);
+
+  listCreateCheckbox.addEventListener("change", function () {
+    if (listCreateCheckbox.checked) {
+      let hatauneDiv = document.getElementById(storeBoxForId);
+      if (hatauneDiv) {
+        hatauneDiv.remove();
+      }
+    }
+  });
+  // assignUniqueId();
 }
 
 function onInputChange(e) {
